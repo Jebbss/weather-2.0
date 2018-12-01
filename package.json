@@ -1,0 +1,16 @@
+{
+  "name": "weather-webapp",
+  "version": "1.0.0",
+  "description": "there is a better way to do this",
+  "main": "app.js",
+  "scripts": {
+    "start": "cd frontend && npm install && ng build && cd .. && node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeb",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  }
+}
