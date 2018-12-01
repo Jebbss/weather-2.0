@@ -1,0 +1,29 @@
+main {
+    background: linear-gradient(to right, #87ceeb, pink);
+    height: 100%;
+  }
+.mainDisplay {
+    font-size: 15pt;
+    background-color: transparent;
+    text-align: center;
+    margin-top: 15%;
+  }
+  
+  span {
+    margin: 0.5rem;
+  }
+  
+  a:hover {
+    text-shadow: 1px 1px 2px white;
+  }
+  a {
+    color: black;
+  }
+  
+  #map {
+    position: absoulute;
+    top: 0;
+    bottom: 0;
+    width: 30%;
+  }
+  
