@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "main {\n    background: linear-gradient(to right, #87ceeb, pink);\n    height: 100%;\n  }\n.mainDisplay {\n    font-size: 15pt;\n    background-color: transparent;\n    text-align: center;\n    margin-top: 15%;\n  }\nspan {\n    margin: 0.5rem;\n  }\na:hover {\n    text-shadow: 1px 1px 2px white;\n  }\na {\n    color: black;\n  }\n#map {\n    position: absoulute;\n    top: 0;\n    bottom: 0;\n    width: 30%;\n  }\n  \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxxREFBcUQ7SUFDckQsYUFBYTtHQUNkO0FBQ0g7SUFDSSxnQkFBZ0I7SUFDaEIsOEJBQThCO0lBQzlCLG1CQUFtQjtJQUNuQixnQkFBZ0I7R0FDakI7QUFFRDtJQUNFLGVBQWU7R0FDaEI7QUFFRDtJQUNFLCtCQUErQjtHQUNoQztBQUNEO0lBQ0UsYUFBYTtHQUNkO0FBRUQ7SUFDRSxvQkFBb0I7SUFDcEIsT0FBTztJQUNQLFVBQVU7SUFDVixXQUFXO0dBQ1oiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIm1haW4ge1xuICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCh0byByaWdodCwgIzg3Y2VlYiwgcGluayk7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICB9XG4ubWFpbkRpc3BsYXkge1xuICAgIGZvbnQtc2l6ZTogMTVwdDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgbWFyZ2luLXRvcDogMTUlO1xuICB9XG4gIFxuICBzcGFuIHtcbiAgICBtYXJnaW46IDAuNXJlbTtcbiAgfVxuICBcbiAgYTpob3ZlciB7XG4gICAgdGV4dC1zaGFkb3c6IDFweCAxcHggMnB4IHdoaXRlO1xuICB9XG4gIGEge1xuICAgIGNvbG9yOiBibGFjaztcbiAgfVxuICBcbiAgI21hcCB7XG4gICAgcG9zaXRpb246IGFic291bHV0ZTtcbiAgICB0b3A6IDA7XG4gICAgYm90dG9tOiAwO1xuICAgIHdpZHRoOiAzMCU7XG4gIH1cbiAgIl19 */"
+module.exports = "span {\n  margin: 0.5rem;\n}\n\na:hover {\n  text-shadow: 1px 1px 2px white;\n}\n\na {\n  color: black;\n}\n\n.mainDisplay {\n  background-color: transparent;\n  text-align: center;\n}\n\n.map-container {\n  margin-top: 1%;\n  margin-bottom: 1%;\n  height: 23%;\n  width: 100%;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0NBQ2hCOztBQUVEO0VBQ0UsK0JBQStCO0NBQ2hDOztBQUVEO0VBQ0UsYUFBYTtDQUNkOztBQUVEO0VBQ0UsOEJBQThCO0VBQzlCLG1CQUFtQjtDQUNwQjs7QUFFRDtFQUNFLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLFlBQVk7RUFDWixtQkFBbUI7Q0FDcEIiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInNwYW4ge1xuICBtYXJnaW46IDAuNXJlbTtcbn1cblxuYTpob3ZlciB7XG4gIHRleHQtc2hhZG93OiAxcHggMXB4IDJweCB3aGl0ZTtcbn1cblxuYSB7XG4gIGNvbG9yOiBibGFjaztcbn1cblxuLm1haW5EaXNwbGF5IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLm1hcC1jb250YWluZXIge1xuICBtYXJnaW4tdG9wOiAxJTtcbiAgbWFyZ2luLWJvdHRvbTogMSU7XG4gIGhlaWdodDogMjMlO1xuICB3aWR0aDogMTAwJTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufSJdfQ== */"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "main {\n    background: linear-gradient(to right, #87ceeb, pin
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<main>\n  <a href=\"#\" id=\"toggle\">°C/°F</a>\n  <div class=\"mainDisplay\">\n    <p id=\"lat\">Local weather at {{position.coords.latitude | number}} , {{position.coords.longitude | number}}</p>\n    <p id=\"dayOfWeek\">{{weather.currently.time * 1000 | date: 'long'}}</p>\n    <canvas id=\"icon\" width=\"64\" height=\"64\"></canvas>\n    <span id=\"temp\">{{weather.currently.temperature}}</span>\n    <span id=\"cond\">{{weather.currently.summary}}</span>\n    <p id=\"summary\">{{weather.daily.summary}}</p>\n    <p>\n      <a href=\"https://darksky.net/poweredby/\" target=\"_blank\">\n        Powered by Dark Sky</a>\n    </p>\n  </div>\n</main>\n"
+module.exports = "<div class=\"map-container\">\n  <app-map-box></app-map-box>\n</div>\n\n<div class=\"row mainDisplay\">\n  <main class=\"container\">\n    <div class=\"\">\n      <p id=\"dayOfWeek\">{{weather.currently.time * 1000 | date: 'fullDate'}}</p>\n      <span id=\"temp\">{{weather.currently.temperature | number:'1.0-0'}} °F</span>\n      <span id=\"cond\">{{weather.currently.summary}}</span>\n      <p id=\"summary\">{{weather.daily.summary}}</p>\n      <p>\n        <a href=\"https://darksky.net/poweredby/\" target=\"_blank\">\n          Powered by Dark Sky</a>\n      </p>\n    </div>\n  </main>\n</div>\n<div>\n  <p id=\"lat\">({{position.coords.latitude | number}} , {{position.coords.longitude | number}})</p>\n</div>\n"
 
 /***/ }),
 
@@ -79,13 +79,13 @@ var AppComponent = /** @class */ (function () {
         this.position = { coords: { latitude: 2, longitude: 2 } };
     }
     AppComponent.prototype.ngOnInit = function () {
-        this.getGeoLocation();
+        this.getGeoLocationAndWeather();
     };
     AppComponent.prototype.getMockWeather = function () {
         var _this = this;
         this.weatherService.getMockWeather().subscribe(function (weather) { return _this.weather = weather; }, function (error) { return console.log('Error: ', error); });
     };
-    AppComponent.prototype.getGeoLocation = function () {
+    AppComponent.prototype.getGeoLocationAndWeather = function () {
         var _this = this;
         this.geoLocationService.getGeoLocation().subscribe(function (position) { return _this.position = position; }, function (error) { return console.log('Error: ', error); }, function () { return _this.getWeather(); });
     };
@@ -122,6 +122,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var _map_component_map_box_map_box_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./map/component/map-box/map-box.component */ "./src/app/map/component/map-box/map-box.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -132,23 +134,203 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
+                _map_component_map_box_map_box_component__WEBPACK_IMPORTED_MODULE_5__["MapBoxComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"]
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_4__["NgbModule"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/map/component/map-box/map-box.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/map/component/map-box/map-box.component.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#map {\n    position: absolute;\n    left: 12.5%;\n    height:23%;\n    width: 75%;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWFwL2NvbXBvbmVudC9tYXAtYm94L21hcC1ib3guY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLG1CQUFtQjtJQUNuQixZQUFZO0lBQ1osV0FBVztJQUNYLFdBQVc7R0FDWiIsImZpbGUiOiJzcmMvYXBwL21hcC9jb21wb25lbnQvbWFwLWJveC9tYXAtYm94LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjbWFwIHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgbGVmdDogMTIuNSU7XG4gICAgaGVpZ2h0OjIzJTtcbiAgICB3aWR0aDogNzUlO1xuICB9Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/map/component/map-box/map-box.component.html":
+/*!**************************************************************!*\
+  !*** ./src/app/map/component/map-box/map-box.component.html ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row container map\" id=\"map\"></div>\n"
+
+/***/ }),
+
+/***/ "./src/app/map/component/map-box/map-box.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/map/component/map-box/map-box.component.ts ***!
+  \************************************************************/
+/*! exports provided: MapBoxComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapBoxComponent", function() { return MapBoxComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mapbox-gl */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
+/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _service_map_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../service/map.service */ "./src/app/map/service/map.service.ts");
+/* harmony import */ var _services_geolocation_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/geolocation.service */ "./src/app/services/geolocation.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var MapBoxComponent = /** @class */ (function () {
+    function MapBoxComponent(mapService, geoLocationService) {
+        this.mapService = mapService;
+        this.geoLocationService = geoLocationService;
+        this.style = 'mapbox://styles/mapbox/light-v9';
+        this.lat = 37.75;
+        this.lng = -122.41;
+        this.message = 'Hello Teapot!';
+    }
+    MapBoxComponent.prototype.ngOnInit = function () {
+        this.intializeMap();
+    };
+    MapBoxComponent.prototype.intializeMap = function () {
+        var _this = this;
+        this.geoLocationService.getGeoLocation().subscribe(function (position) { return _this.position = position; }, function (error) { return console.log('Error: ', error); }, function () { return _this.buildMap(_this.position); });
+    };
+    MapBoxComponent.prototype.buildMap = function (position) {
+        var _this = this;
+        this.map = new mapbox_gl__WEBPACK_IMPORTED_MODULE_1__["Map"]({
+            container: 'map',
+            style: this.style,
+            zoom: 13,
+            center: [position.coords.longitude, position.coords.latitude]
+        });
+        /// Add map controls
+        this.map.addControl(new mapbox_gl__WEBPACK_IMPORTED_MODULE_1__["NavigationControl"]());
+        this.map.on('load', function (event) {
+            /// create map layers with realtime data
+            _this.map.addLayer({
+                id: 'firebase',
+                source: {
+                    type: 'geojson',
+                    data: {
+                        type: 'FeatureCollection',
+                        features: [{
+                                type: 'Feature',
+                                geometry: {
+                                    type: 'Point',
+                                    coordinates: [_this.position.coords.longitude, _this.position.coords.latitude]
+                                },
+                                properties: {
+                                    title: 'Here',
+                                    icon: 'circle'
+                                }
+                            }]
+                    }
+                },
+                type: 'symbol',
+                layout: {
+                    'text-field': '{title}',
+                    'text-size': 18,
+                    'icon-image': 'circle-stroked-15',
+                    'text-offset': [0, 1.5]
+                },
+                paint: {
+                    'text-color': '#f16624',
+                    'text-halo-color': '#fff',
+                    'text-halo-width': 2
+                }
+            });
+        });
+    };
+    MapBoxComponent.prototype.flyTo = function (data) {
+        this.map.flyTo({
+            center: data.geometry.coordinates
+        });
+    };
+    MapBoxComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-map-box',
+            template: __webpack_require__(/*! ./map-box.component.html */ "./src/app/map/component/map-box/map-box.component.html"),
+            styles: [__webpack_require__(/*! ./map-box.component.css */ "./src/app/map/component/map-box/map-box.component.css")]
+        }),
+        __metadata("design:paramtypes", [_service_map_service__WEBPACK_IMPORTED_MODULE_2__["MapService"],
+            _services_geolocation_service__WEBPACK_IMPORTED_MODULE_3__["GeolocationService"]])
+    ], MapBoxComponent);
+    return MapBoxComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/map/service/map.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/map/service/map.service.ts ***!
+  \********************************************/
+/*! exports provided: MapService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapService", function() { return MapService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mapbox-gl */ "./node_modules/mapbox-gl/dist/mapbox-gl.js");
+/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_2__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var MapService = /** @class */ (function () {
+    function MapService() {
+        mapbox_gl__WEBPACK_IMPORTED_MODULE_2__["accessToken"] = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].mapbox.accessToken;
+    }
+    MapService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [])
+    ], MapService);
+    return MapService;
 }());
 
 
@@ -678,7 +860,10 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 var environment = {
-    production: false
+    production: false,
+    mapbox: {
+        accessToken: 'pk.eyJ1IjoiamViYnNzIiwiYSI6ImNqb3VjbXYwYzFhbzIzcHJubzZ3NDY2azUifQ.NxTYj6TDlod2Ie81KOn-lg'
+    }
 };
 /*
  * For easier debugging in development mode, you can import the following file

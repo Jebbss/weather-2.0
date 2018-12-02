@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   constructor(private weatherService: WeatherService, private geoLocationService: GeolocationService) {}
 
   ngOnInit() {
-    this.getGeoLocation();
+    this.getGeoLocationAndWeather();
   }
 
   getMockWeather(): void {
@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
       error => console.log('Error: ', error));
   }
 
-  getGeoLocation(): void {
+  getGeoLocationAndWeather(): void {
     this.geoLocationService.getGeoLocation().subscribe(
       position => this.position = position,
       error => console.log('Error: ', error),

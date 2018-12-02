@@ -1,15 +1,21 @@
-<main>
-  <a href="#" id="toggle">°C/°F</a>
-  <div class="mainDisplay">
-    <p id="lat">Local weather at {{position.coords.latitude | number}} , {{position.coords.longitude | number}}</p>
-    <p id="dayOfWeek">{{weather.currently.time * 1000 | date: 'long'}}</p>
-    <canvas id="icon" width="64" height="64"></canvas>
-    <span id="temp">{{weather.currently.temperature}}</span>
-    <span id="cond">{{weather.currently.summary}}</span>
-    <p id="summary">{{weather.daily.summary}}</p>
-    <p>
-      <a href="https://darksky.net/poweredby/" target="_blank">
-        Powered by Dark Sky</a>
-    </p>
-  </div>
-</main>
+<div class="map-container">
+  <app-map-box></app-map-box>
+</div>
+
+<div class="row mainDisplay">
+  <main class="container">
+    <div class="">
+      <p id="dayOfWeek">{{weather.currently.time * 1000 | date: 'fullDate'}}</p>
+      <span id="temp">{{weather.currently.temperature | number:'1.0-0'}} °F</span>
+      <span id="cond">{{weather.currently.summary}}</span>
+      <p id="summary">{{weather.daily.summary}}</p>
+      <p>
+        <a href="https://darksky.net/poweredby/" target="_blank">
+          Powered by Dark Sky</a>
+      </p>
+    </div>
+  </main>
+</div>
+<div>
+  <p id="lat">({{position.coords.latitude | number}} , {{position.coords.longitude | number}})</p>
+</div>
