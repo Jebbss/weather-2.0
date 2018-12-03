@@ -179,7 +179,7 @@ module.exports = "#map {\n    position: absolute;\n    left: 12.5%;\n    height:
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row container map\" id=\"map\"></div>\n"
+module.exports = "<div class=\"row map\" id=\"map\"></div>\n"
 
 /***/ }),
 
