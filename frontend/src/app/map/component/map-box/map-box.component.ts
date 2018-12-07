@@ -3,6 +3,7 @@ import * as mapboxgl from 'mapbox-gl';
 import { MapService } from '../../service/map.service';
 import { GeoJson, FeatureCollection } from '../../map';
 import { GeolocationService } from '../../../services/geolocation.service';
+import { LatLngGeoLocation } from '../../../classes/latLngGeoLocation.model';
 
 @Component({
   selector: 'app-map-box',
@@ -17,7 +18,7 @@ export class MapBoxComponent implements OnInit {
   lng = -122.41;
   message = 'Hello Teapot!';
 
-  position: any;
+  position: LatLngGeoLocation;
   source: any;
   markers: any;
 
@@ -25,22 +26,19 @@ export class MapBoxComponent implements OnInit {
     private geoLocationService: GeolocationService) { }
 
   ngOnInit() {
-    this.intializeMap();
+    this.geoLocationService.currentGeoLocation.subscribe(
+      (position) => { this.position = position; this.buildMap(); },
+      error => console.log('Error: ', error)
+    );
   }
 
-  private intializeMap() {
-    this.geoLocationService.getGeoLocation().subscribe(
-      position => this.position = position,
-      error => console.log('Error: ', error),
-      () => this.buildMap(this.position));
-  }
-
-  buildMap(position: any) {
+  buildMap() {
+    console.log('buildMap: ' + this.position.latitude);
     this.map = new mapboxgl.Map({
       container: 'map',
       style: this.style,
       zoom: 13,
-      center: [position.coords.longitude, position.coords.latitude]
+      center: [this.position.longitude, this.position.latitude]
     });
 
 
@@ -59,7 +57,7 @@ export class MapBoxComponent implements OnInit {
               type: 'Feature',
               geometry: {
                 type: 'Point',
-                coordinates: [this.position.coords.longitude, this.position.coords.latitude]
+                coordinates: [this.position.longitude, this.position.latitude]
               },
               properties: {
                 title: 'Here',
@@ -83,6 +81,10 @@ export class MapBoxComponent implements OnInit {
       });
     });
 
+    this.map.on('click', (e) => {
+      console.log(e);
+      document.getElementById('lngLat').innerHTML = JSON.stringify(e.lngLat);
+    });
   }
   flyTo(data: GeoJson) {
     this.map.flyTo({

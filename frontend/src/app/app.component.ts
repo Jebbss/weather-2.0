@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { WeatherService } from './services/weather.service';
 import { GeolocationService } from './services/geolocation.service';
+import { LatLngGeoLocation } from './classes/latLngGeoLocation.model';
+import { Weather } from './classes/Weather.model';
 
 @Component({
   selector: 'app-root',
@@ -10,31 +12,29 @@ import { GeolocationService } from './services/geolocation.service';
 })
 export class AppComponent implements OnInit {
   title = 'weather';
-  weather = {};
-  position = { coords: { latitude: 2, longitude: 2}};
+  weather;
+  position: LatLngGeoLocation;
 
   constructor(private weatherService: WeatherService, private geoLocationService: GeolocationService) {}
 
   ngOnInit() {
-    this.getGeoLocationAndWeather();
+    this.geoLocationService.getGeoLocation();
+
+    this.geoLocationService.currentGeoLocation.subscribe(
+      (position) => {this.position = position; this.getWeather(); },
+      error => console.log('Error: ', error)
+    );
   }
 
   getMockWeather(): void {
     this.weatherService.getMockWeather().subscribe(
-      weather => this.weather = weather,
+      (weather) => { this.weather = weather; },
       error => console.log('Error: ', error));
   }
 
-  getGeoLocationAndWeather(): void {
-    this.geoLocationService.getGeoLocation().subscribe(
-      position => this.position = position,
-      error => console.log('Error: ', error),
-      () => this.getWeather()
-      );
-  }
-
   getWeather(): void {
-    this.weatherService.getWeather(this.position.coords.latitude, this.position.coords.longitude).subscribe(
+    console.log('getWeatherAppComp: ' + this.position);
+    this.weatherService.getWeather(this.position).subscribe(
       weather => this.weather = weather
     );
   }
