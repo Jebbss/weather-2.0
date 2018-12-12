@@ -41,7 +41,7 @@ module.exports = "span {\n  margin: 0.5rem;\n}\n\na:hover {\n  text-shadow: 1px 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"map-container\">\n  <app-map-box></app-map-box>\n</div>\n\n<div class=\"row mainDisplay\">\n  <main class=\"container\">\n    <div class=\"\">\n      <p id=\"dayOfWeek\">{{weather.currently.time * 1000 | date: 'fullDate'}}</p>\n      <span id=\"temp\">{{weather.currently.temperature | number:'1.0-0'}} °F</span>\n      <span id=\"cond\">{{weather.currently.summary}}</span>\n      <p id=\"summary\">{{weather.daily.summary}}</p>\n      <p>\n        <a href=\"https://darksky.net/poweredby/\" target=\"_blank\">\n          Powered by Dark Sky</a>\n      </p>\n    </div>\n  </main>\n</div>\n<div>\n  <p id=\"lat\">({{position.coords.latitude | number}} , {{position.coords.longitude | number}})</p>\n</div>\n"
+module.exports = "<div class=\"map-container\">\n  <app-map-box></app-map-box>\n</div>\n\n<div class=\"row mainDisplay\">\n  <main class=\"container\">\n    <div class=\"\">\n      <p id=\"dayOfWeek\">{{weather.currently.time * 1000 | date: 'fullDate'}}</p>\n      <span id=\"temp\">{{weather.currently.temperature | number:'1.0-0'}} °F</span>\n      <span id=\"cond\">{{weather.currently.summary}}</span>\n      <p id=\"summary\">{{weather.daily.summary}}</p>\n      <p>\n        <a href=\"https://darksky.net/poweredby/\" target=\"_blank\">\n          Powered by Dark Sky</a>\n      </p>\n    </div>\n  </main>\n</div>\n<div>\n  <p id=\"lat\">({{position.latitude | number}} , {{position.longitude | number}})</p>\n</div>\n<div id=\"lngLat\"></div>"
 
 /***/ }),
 
@@ -76,22 +76,20 @@ var AppComponent = /** @class */ (function () {
         this.geoLocationService = geoLocationService;
         this.title = 'weather';
         this.weather = {};
-        this.position = { coords: { latitude: 2, longitude: 2 } };
     }
     AppComponent.prototype.ngOnInit = function () {
-        this.getGeoLocationAndWeather();
+        var _this = this;
+        this.geoLocationService.getGeoLocation();
+        this.geoLocationService.currentGeoLocation.subscribe(function (position) { _this.position = position; _this.getWeather(); }, function (error) { return console.log('Error: ', error); });
     };
     AppComponent.prototype.getMockWeather = function () {
         var _this = this;
         this.weatherService.getMockWeather().subscribe(function (weather) { return _this.weather = weather; }, function (error) { return console.log('Error: ', error); });
     };
-    AppComponent.prototype.getGeoLocationAndWeather = function () {
-        var _this = this;
-        this.geoLocationService.getGeoLocation().subscribe(function (position) { return _this.position = position; }, function (error) { return console.log('Error: ', error); }, function () { return _this.getWeather(); });
-    };
     AppComponent.prototype.getWeather = function () {
         var _this = this;
-        this.weatherService.getWeather(this.position.coords.latitude, this.position.coords.longitude).subscribe(function (weather) { return _this.weather = weather; });
+        console.log('getWeatherAppComp: ' + this.position);
+        this.weatherService.getWeather(this.position).subscribe(function (weather) { return _this.weather = weather; });
     };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -221,19 +219,17 @@ var MapBoxComponent = /** @class */ (function () {
         this.message = 'Hello Teapot!';
     }
     MapBoxComponent.prototype.ngOnInit = function () {
-        this.intializeMap();
-    };
-    MapBoxComponent.prototype.intializeMap = function () {
         var _this = this;
-        this.geoLocationService.getGeoLocation().subscribe(function (position) { return _this.position = position; }, function (error) { return console.log('Error: ', error); }, function () { return _this.buildMap(_this.position); });
+        this.geoLocationService.currentGeoLocation.subscribe(function (position) { _this.position = position; _this.buildMap(); }, function (error) { return console.log('Error: ', error); });
     };
-    MapBoxComponent.prototype.buildMap = function (position) {
+    MapBoxComponent.prototype.buildMap = function () {
         var _this = this;
+        console.log('buildMap: ' + this.position.latitude);
         this.map = new mapbox_gl__WEBPACK_IMPORTED_MODULE_1__["Map"]({
             container: 'map',
             style: this.style,
             zoom: 13,
-            center: [position.coords.longitude, position.coords.latitude]
+            center: [this.position.longitude, this.position.latitude]
         });
         /// Add map controls
         this.map.addControl(new mapbox_gl__WEBPACK_IMPORTED_MODULE_1__["NavigationControl"]());
@@ -249,7 +245,7 @@ var MapBoxComponent = /** @class */ (function () {
                                 type: 'Feature',
                                 geometry: {
                                     type: 'Point',
-                                    coordinates: [_this.position.coords.longitude, _this.position.coords.latitude]
+                                    coordinates: [_this.position.longitude, _this.position.latitude]
                                 },
                                 properties: {
                                     title: 'Here',
@@ -271,6 +267,10 @@ var MapBoxComponent = /** @class */ (function () {
                     'text-halo-width': 2
                 }
             });
+        });
+        this.map.on('click', function (e) {
+            console.log(e);
+            document.getElementById('lngLat').innerHTML = JSON.stringify(e.lngLat);
         });
     };
     MapBoxComponent.prototype.flyTo = function (data) {
@@ -741,32 +741,29 @@ var GEOLOCATION_ERRORS = {
 };
 var GeolocationService = /** @class */ (function () {
     function GeolocationService() {
+        this.defaultGeoLocation = { latitude: 44, longitude: -88 };
+        this.geoLocation = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](this.defaultGeoLocation);
+        this.currentGeoLocation = this.geoLocation.asObservable();
     }
+    GeolocationService.prototype.setGeoLocation = function (latLngGeoLocation) {
+        console.log('setGeoLocation');
+        console.log(latLngGeoLocation);
+        this.geoLocation.next(latLngGeoLocation);
+    };
     GeolocationService.prototype.getGeoLocation = function (geoLocationOptions) {
+        var _this = this;
+        console.log('getGeoLocation');
         geoLocationOptions = geoLocationOptions || { timeout: 50000 };
-        return rxjs__WEBPACK_IMPORTED_MODULE_1__["Observable"].create(function (observer) {
-            if ('geolocation' in navigator) {
-                window.navigator.geolocation.getCurrentPosition(function (position) {
-                    observer.next(position);
-                    observer.complete();
-                }, function (error) {
-                    switch (error.code) {
-                        case 1:
-                            observer.error(GEOLOCATION_ERRORS['errors.location.permissionDenied']);
-                            break;
-                        case 2:
-                            observer.error(GEOLOCATION_ERRORS['errors.location.positionUnavailable']);
-                            break;
-                        case 3:
-                            observer.error(GEOLOCATION_ERRORS['errors.location.timeout']);
-                            break;
-                    }
-                }, geoLocationOptions);
-            }
-            else {
-                observer.error(GEOLOCATION_ERRORS['errors.location.unsupportedBrowser']);
-            }
-        });
+        if ('geolocation' in navigator) {
+            window.navigator.geolocation.getCurrentPosition(function (position) {
+                _this.setGeoLocation({ latitude: position.coords.latitude, longitude: position.coords.longitude });
+            }, function (error) {
+                console.log(error);
+            }, geoLocationOptions);
+        }
+        else {
+            console.log('Location services unavailable');
+        }
     };
     GeolocationService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -813,15 +810,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var WeatherService = /** @class */ (function () {
     function WeatherService(http) {
         this.http = http;
-        this.url = location.origin + '/api/v1/weather/3,2';
+        this.url = location.origin + '/api/v1/weather/';
     }
     WeatherService.prototype.getMockWeather = function () {
         return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(_mock_mock_weather__WEBPACK_IMPORTED_MODULE_4__["weatherData"]);
     };
-    WeatherService.prototype.getWeather = function (latitude, longitude) {
-        console.log(location.origin);
-        return this.http.get(this.url)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function (_) { return console.log('fetched weather'); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError('getHeroes', [])));
+    WeatherService.prototype.getWeather = function (position) {
+        var fullUrl = this.makeUrl(position);
+        console.log(fullUrl);
+        return this.http.get(fullUrl)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function (_) { return console.log('fetched weather'); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError('getWeather', [])));
+    };
+    WeatherService.prototype.makeUrl = function (position) {
+        return this.url + position.latitude + ',' + position.longitude;
     };
     WeatherService.prototype.handleError = function (operation, result) {
         if (operation === void 0) { operation = 'operation'; }
