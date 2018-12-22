@@ -75,7 +75,6 @@ var AppComponent = /** @class */ (function () {
         this.weatherService = weatherService;
         this.geoLocationService = geoLocationService;
         this.title = 'weather';
-        this.weather = {};
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -84,7 +83,7 @@ var AppComponent = /** @class */ (function () {
     };
     AppComponent.prototype.getMockWeather = function () {
         var _this = this;
-        this.weatherService.getMockWeather().subscribe(function (weather) { return _this.weather = weather; }, function (error) { return console.log('Error: ', error); });
+        this.weatherService.getMockWeather().subscribe(function (weather) { _this.weather = weather; }, function (error) { return console.log('Error: ', error); });
     };
     AppComponent.prototype.getWeather = function () {
         var _this = this;
@@ -271,6 +270,7 @@ var MapBoxComponent = /** @class */ (function () {
         this.map.on('click', function (e) {
             console.log(e);
             document.getElementById('lngLat').innerHTML = JSON.stringify(e.lngLat);
+            _this.geoLocationService.setGeoLocation({ latitude: e.lngLat.lat, longitude: e.lngLat.lng });
         });
     };
     MapBoxComponent.prototype.flyTo = function (data) {
@@ -821,6 +821,15 @@ var WeatherService = /** @class */ (function () {
         return this.http.get(fullUrl)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function (_) { return console.log('fetched weather'); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError('getWeather', [])));
     };
+    //   constructor(private routeParams: RouteParams,
+    //     public http: Http) {
+    //     this.user = new User();
+    //     this.http.get('http://localhost:3000/user/' + this.routeParams.get('id'))
+    //         .map((res: Response) => res.json())
+    //         .subscribe((json: Object) => {
+    //             this.user = new User().fromJSON(json);
+    //         });
+    // }
     WeatherService.prototype.makeUrl = function (position) {
         return this.url + position.latitude + ',' + position.longitude;
     };

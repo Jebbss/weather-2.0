@@ -82,8 +82,8 @@ export class MapBoxComponent implements OnInit {
     });
 
     this.map.on('click', (e) => {
-      console.log(e);
-      document.getElementById('lngLat').innerHTML = JSON.stringify(e.lngLat);
+      console.log(e.lngLat);
+      this.geoLocationService.setGeoLocation({latitude: e.lngLat.lat, longitude: e.lngLat.lng});
     });
   }
   flyTo(data: GeoJson) {
