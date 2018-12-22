@@ -41,7 +41,7 @@ module.exports = "span {\n  margin: 0.5rem;\n}\n\na:hover {\n  text-shadow: 1px 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"map-container\">\n  <app-map-box></app-map-box>\n</div>\n\n<div class=\"row mainDisplay\">\n  <main class=\"container\">\n    <div class=\"\">\n      <p id=\"dayOfWeek\">{{weather.currently.time * 1000 | date: 'fullDate'}}</p>\n      <span id=\"temp\">{{weather.currently.temperature | number:'1.0-0'}} °F</span>\n      <span id=\"cond\">{{weather.currently.summary}}</span>\n      <p id=\"summary\">{{weather.daily.summary}}</p>\n      <p>\n        <a href=\"https://darksky.net/poweredby/\" target=\"_blank\">\n          Powered by Dark Sky</a>\n      </p>\n    </div>\n  </main>\n</div>\n<div>\n  <p id=\"lat\">({{position.latitude | number}} , {{position.longitude | number}})</p>\n</div>\n<div id=\"lngLat\"></div>"
+module.exports = "<div class=\"map-container\">\n  <app-map-box></app-map-box>\n</div>\n\n<div class=\"row mainDisplay\">\n  <main class=\"container\">\n    <div class=\"\">\n      <p id=\"dayOfWeek\">{{weather.currently.time * 1000 | date: 'fullDate'}}</p>\n      <span id=\"temp\">{{weather.currently.temperature | number:'1.0-0'}} °F</span>\n      <span id=\"cond\">{{weather.currently.summary}}</span>\n      <p id=\"summary\">{{weather.daily.summary}}</p>\n      <p>\n        <a href=\"https://darksky.net/poweredby/\" target=\"_blank\">\n          Powered by Dark Sky</a>\n      </p>\n    </div>\n  </main>\n</div>\n<div>\n  <p id=\"lat\">({{position.latitude | number}} , {{position.longitude | number}})</p>\n</div>\n"
 
 /***/ }),
 
@@ -268,8 +268,7 @@ var MapBoxComponent = /** @class */ (function () {
             });
         });
         this.map.on('click', function (e) {
-            console.log(e);
-            document.getElementById('lngLat').innerHTML = JSON.stringify(e.lngLat);
+            console.log(e.lngLat);
             _this.geoLocationService.setGeoLocation({ latitude: e.lngLat.lat, longitude: e.lngLat.lng });
         });
     };
