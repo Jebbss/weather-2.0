@@ -13,7 +13,7 @@ import { LatLngGeoLocation } from '../../../classes/latLngGeoLocation.model';
 export class MapBoxComponent implements OnInit {
 
   map: mapboxgl.Map;
-  style = 'mapbox://styles/mapbox/light-v9';
+  style = 'mapbox://styles/mapbox/basic-v9';
   lat = 37.75;
   lng = -122.41;
   message = 'Hello Teapot!';

@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "span {\n  margin: 0.5rem;\n}\n\na:hover {\n  text-shadow: 1px 1px 2px white;\n}\n\na {\n  color: black;\n}\n\n.mainDisplay {\n  background-color: transparent;\n  text-align: center;\n}\n\n.map-container {\n  margin-top: 1%;\n  margin-bottom: 1%;\n  height: 23%;\n  width: 100%;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0NBQ2hCOztBQUVEO0VBQ0UsK0JBQStCO0NBQ2hDOztBQUVEO0VBQ0UsYUFBYTtDQUNkOztBQUVEO0VBQ0UsOEJBQThCO0VBQzlCLG1CQUFtQjtDQUNwQjs7QUFFRDtFQUNFLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLFlBQVk7RUFDWixtQkFBbUI7Q0FDcEIiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInNwYW4ge1xuICBtYXJnaW46IDAuNXJlbTtcbn1cblxuYTpob3ZlciB7XG4gIHRleHQtc2hhZG93OiAxcHggMXB4IDJweCB3aGl0ZTtcbn1cblxuYSB7XG4gIGNvbG9yOiBibGFjaztcbn1cblxuLm1haW5EaXNwbGF5IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLm1hcC1jb250YWluZXIge1xuICBtYXJnaW4tdG9wOiAxJTtcbiAgbWFyZ2luLWJvdHRvbTogMSU7XG4gIGhlaWdodDogMjMlO1xuICB3aWR0aDogMTAwJTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufSJdfQ== */"
+module.exports = "span {\n  margin: 0.5rem;\n}\n\na:hover {\n  text-shadow: 1px 1px 2px white;\n}\n\na {\n  color: black;\n}\n\n.mainDisplay {\n  background-color: transparent;\n  text-align: center;\n}\n\n.map-container {\n  margin-top: 1%;\n  margin-bottom: 1%;\n  height: 40%;\n  width: 100%;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0NBQ2hCOztBQUVEO0VBQ0UsK0JBQStCO0NBQ2hDOztBQUVEO0VBQ0UsYUFBYTtDQUNkOztBQUVEO0VBQ0UsOEJBQThCO0VBQzlCLG1CQUFtQjtDQUNwQjs7QUFFRDtFQUNFLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLFlBQVk7RUFDWixtQkFBbUI7Q0FDcEIiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInNwYW4ge1xuICBtYXJnaW46IDAuNXJlbTtcbn1cblxuYTpob3ZlciB7XG4gIHRleHQtc2hhZG93OiAxcHggMXB4IDJweCB3aGl0ZTtcbn1cblxuYSB7XG4gIGNvbG9yOiBibGFjaztcbn1cblxuLm1haW5EaXNwbGF5IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLm1hcC1jb250YWluZXIge1xuICBtYXJnaW4tdG9wOiAxJTtcbiAgbWFyZ2luLWJvdHRvbTogMSU7XG4gIGhlaWdodDogNDAlO1xuICB3aWR0aDogMTAwJTtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufSJdfQ== */"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "span {\n  margin: 0.5rem;\n}\n\na:hover {\n  text-shadow: 1px 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"map-container\">\n  <app-map-box></app-map-box>\n</div>\n\n<div class=\"row mainDisplay\">\n  <main class=\"container\">\n    <div class=\"\">\n      <p id=\"dayOfWeek\">{{weather.currently.time * 1000 | date: 'fullDate'}}</p>\n      <span id=\"temp\">{{weather.currently.temperature | number:'1.0-0'}} °F</span>\n      <span id=\"cond\">{{weather.currently.summary}}</span>\n      <p id=\"summary\">{{weather.daily.summary}}</p>\n      <p>\n        <a href=\"https://darksky.net/poweredby/\" target=\"_blank\">\n          Powered by Dark Sky</a>\n      </p>\n    </div>\n  </main>\n</div>\n<div>\n  <p id=\"lat\">({{position.latitude | number}} , {{position.longitude | number}})</p>\n</div>\n"
+module.exports = "<div>\n  <p id=\"lat\">({{position.latitude | number}} , {{position.longitude | number}})</p>\n</div>\n\n<div class=\"map-container\">\n  <app-map-box></app-map-box>\n</div>\n\n<div class=\"row mainDisplay\">\n  <main class=\"container\">\n    <div class=\"\">\n      <p id=\"dayOfWeek\">{{weather.currently.time * 1000 | date: 'fullDate'}}</p>\n      <span id=\"temp\">{{weather.currently.temperature | number:'1.0-0'}} °F</span>\n      <span id=\"cond\">{{weather.currently.summary}}</span>\n      <p id=\"summary\">{{weather.daily.summary}}</p>\n      <p>\n        <a href=\"https://darksky.net/poweredby/\" target=\"_blank\">\n          Powered by Dark Sky</a>\n      </p>\n    </div>\n  </main>\n</div>\n"
 
 /***/ }),
 
@@ -165,7 +165,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#map {\n    position: absolute;\n    left: 12.5%;\n    height:23%;\n    width: 75%;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWFwL2NvbXBvbmVudC9tYXAtYm94L21hcC1ib3guY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLG1CQUFtQjtJQUNuQixZQUFZO0lBQ1osV0FBVztJQUNYLFdBQVc7R0FDWiIsImZpbGUiOiJzcmMvYXBwL21hcC9jb21wb25lbnQvbWFwLWJveC9tYXAtYm94LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjbWFwIHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgbGVmdDogMTIuNSU7XG4gICAgaGVpZ2h0OjIzJTtcbiAgICB3aWR0aDogNzUlO1xuICB9Il19 */"
+module.exports = "#map {\n    position: absolute;\n    left: 12.5%;\n    height:40%;\n    width: 75%;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWFwL2NvbXBvbmVudC9tYXAtYm94L21hcC1ib3guY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLG1CQUFtQjtJQUNuQixZQUFZO0lBQ1osV0FBVztJQUNYLFdBQVc7R0FDWiIsImZpbGUiOiJzcmMvYXBwL21hcC9jb21wb25lbnQvbWFwLWJveC9tYXAtYm94LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjbWFwIHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgbGVmdDogMTIuNSU7XG4gICAgaGVpZ2h0OjQwJTtcbiAgICB3aWR0aDogNzUlO1xuICB9Il19 */"
 
 /***/ }),
 
@@ -212,7 +212,7 @@ var MapBoxComponent = /** @class */ (function () {
     function MapBoxComponent(mapService, geoLocationService) {
         this.mapService = mapService;
         this.geoLocationService = geoLocationService;
-        this.style = 'mapbox://styles/mapbox/light-v9';
+        this.style = 'mapbox://styles/mapbox/basic-v9';
         this.lat = 37.75;
         this.lng = -122.41;
         this.message = 'Hello Teapot!';
