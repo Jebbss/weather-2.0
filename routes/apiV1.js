@@ -18,9 +18,9 @@ function getWeather(req, res) {
 
 function makeUrl(req) {
     const baseUrl = 'https://api.darksky.net/forecast/';
-    const key = '76b159644d4f45df43fb016a5e5c4756/';
+    const key = process.env.DARK_SKY_KEY;
     const exclusions = '?&units=us&exclude=minutely,flags,hourly,alerts';
-    return baseUrl + key + req.params.lat + ',' + req.params.long + exclusions;
+    return baseUrl + key + '/' + req.params.lat + ',' + req.params.long + exclusions;
 }
 
 module.exports = router;
