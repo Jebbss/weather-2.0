@@ -9,7 +9,7 @@ app.listen(port, ()=>{
   });
 
 //public folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/dist/')));
 
 //index route
 app.get('/', (req, res) => res.send('I am a teapot'));
